@@ -73,7 +73,7 @@ Backup all Configurations
 - 10.128.0.0/24 as the LAN network
 - 10.128.99.0/24 as the GUEST network
 - 10.128.10.0/24 as the DMZ network
-- Network > Interface
+- [Network > Interface]
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6bf2833a-a05d-4034-858b-4b655a4011dc)
 
@@ -86,7 +86,7 @@ Backup all Configurations
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bdd3b705-da18-4ed0-aac6-38125344e207)
 
 - Enable DNS: System > Feature Visibility (Must enable for settings to appear in GUI) 
-- Configure firewall system DNS: Network > DNS
+- Configure firewall system DNS: [Network > DNS]
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/4d414eac-86ea-4a29-a0d3-3c3c3fcecadb)
 
@@ -97,21 +97,28 @@ Note: This tells the firewall to use this DNS servers for it's own DNS requests.
 
 ### Configure Network DNS
 DNS server = same as interface IP
-- Network > DNS Servers
+- [Network > DNS Servers]
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/8baf32a9-1aed-4423-bb46-0854059829bb)
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bd968b02-6ea4-4c01-9876-af10646e6223)
 
 ### Configure Service Objects
-- Policy & Objects > Services
+- [Policy & Objects > Services]
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/44401d53-6700-4c00-bb90-890c0ae7fda4)
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/94c1efef-7874-439a-b0fd-b37df1f6ddf3)
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e0686ff3-d8a8-463b-b824-5697194dee3a)
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/d1498ac2-4f65-45fc-8fe8-9b57f65f36f2)
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/0ff1f09f-9e09-4a5f-8064-b86ffd5c02c2)
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f81f28e5-2a0a-4ffd-974b-016cb472ea92)
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/ae04841c-38f7-4392-87e3-07800323f29e)
 
 
 

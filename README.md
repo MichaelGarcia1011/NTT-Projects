@@ -103,7 +103,8 @@ DNS server = same as interface IP
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bd968b02-6ea4-4c01-9876-af10646e6223)
 
-
+### Configure Service Objects
+- Policy & Objects > Services
 
 
 

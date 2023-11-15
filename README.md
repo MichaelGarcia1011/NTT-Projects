@@ -10,15 +10,11 @@ In GNS3 - drag all network equipment into the project and connect all the device
 - Win10 workstation
 - ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/0a4ec1ef-8253-4f47-8916-29dd4c1a6ce5)
 
-
-
-
-
-
 ## Step 2
 Configure the FortiGate Firewall
-- Create password
-- 
+- Create Password
+- ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/a8998b49-a54e-4dfd-8340-06ecd72ffd5c)
+
 - Configure Firewall
 - 
 - Configure Interface

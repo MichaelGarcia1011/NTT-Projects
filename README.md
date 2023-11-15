@@ -8,7 +8,9 @@ In GNS3 - drag all network equipment into the project and connect all the device
 - LAN Switch
 - DMZ Switch
 - Win10 workstation
-![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/cc394d7a-54c0-465b-ac52-5c6fe0608260)
+- 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/be490d0d-fad6-489f-afc2-4281c3ccd60b)
+
 
 
 

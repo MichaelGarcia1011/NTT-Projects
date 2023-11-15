@@ -35,13 +35,79 @@ In FortiGate PuTTY - Configure the FortiGate Firewall
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/8731ccb7-f000-40e6-b1ff-5f3bcbf00759)
 
 
-
 ## Step 3 
-### Add Windows workstation (Test internet connection)
+### Test Internet Connection on Win10 Workstation
 Ping:
-- LAN - 10.128.0.1 (Reponsed)
+- LAN - 10.128.0.1 (Responsed)
 - WAN - 8.8.8.8 (Request timed out. Connection to be establish)
 - DNS - google.com (Request could not find host. Connection to be establish)
+
+
+## Step 4
+Connect to FortiGate Firewall (utilize GUI) from Win10 Workstation.
+Web Browser: http://10.128.0.1/
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/26bb851d-1f42-432d-9011-97dd89f69d4d)
+
+
+
+System adjustments:  
+- Hostname & Timezone
+- Set idle to 60 mins
+- Enable auto file system check
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6f4ae0c0-9ace-430a-86f4-6acd60964bd9)
+
+System > Settings
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/b97d56db-2160-4c53-9347-8e9545df7923)
+
+Backup all Configurations
+- [admin > configuration > backup]
+- Save backup
+- Save in download folder on Win10 Workstation
+
+
+## Step 5
+### In Web Browser (FortiGate Firewall) - Configure Network Interface
+- 10.128.0.0/24 as the LAN network
+- 10.128.99.0/24 as the GUEST network
+- 10.128.10.0/24 as the DMZ network
+- Network > Interface
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6bf2833a-a05d-4034-858b-4b655a4011dc)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6f039734-007c-4419-b765-87a1ca8d8474)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/a02bea15-10e1-45a1-869e-377fe9296572)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e5e24311-fabb-4460-9691-652dc19f9d74)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bdd3b705-da18-4ed0-aac6-38125344e207)
+
+- Enable DNS: System > Feature Visibility (Must enable for settings to appear in GUI) 
+- Configure firewall system DNS: Network > DNS
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/4d414eac-86ea-4a29-a0d3-3c3c3fcecadb)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e8025ec3-50d0-4c05-8ad2-0cafc129f5a0)
+
+Note: 8.8.8.8 (google) and 1.1.1.1 (cloudflare) are just well-known public DNS servers
+Note: This tells the firewall to use this DNS servers for it's own DNS requests.
+
+### Configure Network DNS
+DNS server = same as interface IP
+- Network > DNS Servers
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/8baf32a9-1aed-4423-bb46-0854059829bb)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bd968b02-6ea4-4c01-9876-af10646e6223)
+
+
+
+
+
+
 
 
 

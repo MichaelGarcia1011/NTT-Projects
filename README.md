@@ -2,6 +2,8 @@
 
 Creating a small business network
 
+## Stage1 : Network Setup
+
 ## Step 1
 In GNS3 - drag all network equipment into the project and connect all the devices
 - FortiGate (Firewall)

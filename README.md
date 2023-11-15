@@ -3,11 +3,12 @@
 Creating a small business network
 
 ## Step 1
-In GNS3 - drag all network equioment into the project and connect all the devices
-- FortiGate {Firewwall}
+In GNS3 - drag all network equipment into the project and connect all the devices
+- FortiGate (Firewwall)
 - LAN Switch
 - DMZ Switch
 - Win10 workstation
+<img width="240" alt="Stage 1 components" src="https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/33eebdec-4eb5-499b-bccf-2b5876a6fbf0">
 
 
 ## Step 2

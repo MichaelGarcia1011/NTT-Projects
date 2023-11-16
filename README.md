@@ -233,6 +233,49 @@ Server Manager > Tools > Active Directory Users and Computers
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/dcda4017-d551-4d5f-a8d8-d83b100cdad5)
 
 
+## Step 9: Prepare Win10 workstation to join the domain
+- Change the hostname to win10, then reboot.
+- Change the primary DNS server to the IP for the DC.
+- Set NTP to sync with dc.widgets.localdomain
+
+
+
+## Step 10: Join Win10 to the widgets.localdomain domain
+
+### Join a Computer to a Domain (Microsoft Directions)
+- On the Desktop, click the Start button, type Control Panel, and then press ENTER.
+- Navigate to System and Security, and then click System.
+- Under Computer name, domain, and workgroup settings, click Change settings.
+- Under the Computer Name tab, click Change.
+- Under Member of, click Domain, type the name of the domain that you wish this computer to join, and then click OK.
+- Click OK in the Computer Name/Domain Changes dialog box, and then restart the computer.
+
+### Join a Server to a Domain (Microsoft Directions)
+- On the Desktop, click the Start button, type Control Panel, and then press ENTER.
+- Navigate to System and Security, and then click System.
+- Under Related settings, click Rename this PC (advanced).
+- Under the Computer Name tab, click Change.
+- Under Member of, click Domain, type the name of the domain that you wish this server to join, and then click OK.
+- Click OK in the Computer Name/Domain Changes dialog box, and then restart the server.
+
+## Step 11: Set the desktop background with GPO
+
+- Edit the Default Domain Policy
+- On the dc, login and open the Group Policy Management Console, edit the Default Domain Policy.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f38938c9-3139-4d94-8fb0-72a10b859b92)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/3f3e32f3-229f-4f5e-8227-9fb69e9aebd3)
+
+- Logout of win10, and then log back in: Background should be updated.
+- You can use gpupdate and gpresult to troubleshoot GPO issues.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/9c6e3f6e-68d5-4e20-85d5-1f6ab13c207c)
+
+
+# Stage3 : IIS Setup
+
+## Step 1
 
 
 

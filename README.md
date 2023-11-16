@@ -281,7 +281,7 @@ Server Manager > Tools > Active Directory Users and Computers
 # Stage4 : LAMP Setup
 
 ## Step 1
-- In GNS3, drag QUME VM Ubuntu in project and connected to established DMZ switch. 
+- In GNS3, drag QUME VM Ubuntu in project and connect to established DMZ switch. 
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e9b40c2f-6c08-4790-90be-d68c4e89bd46)
 
@@ -296,13 +296,32 @@ Server Manager > Tools > Active Directory Users and Computers
 
 ## Step 2: Update Host file
 - Open Terminal, change to root [sudo -i] > enter password.
-- 
-- 
+- ### Edit Host file [nano /etc/hosts]
+  - 127.0.0.1 localhost.localdomain localhost
+  - 10.128.10.80 www.widgets.localdomain www
+    
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6b8ad9ad-893d-475e-81f6-74ade0d588fc)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/59816a1a-6a8f-4062-b319-9b36fb0cf8d0)
 
 
+- ### Set hostname with hostnamectl
+  - hostnamectl set-hostname www
+  - hostnamectl
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/37bef485-c45f-4024-a1ff-167594934773)
 
+## Step 3: Update packages on the Server
+- [apt update -y]
+- [apt upgrade -y]
+- [apt dist-upgrade -y]
+- [apt autoremove -y]
+- [apt autoclean -y]
+- [systemctl reboot]
 
+NOTE: *Upgrades will take a few hours.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/20183d1e-71a7-4d67-8924-88113d99a065)
 
 
 

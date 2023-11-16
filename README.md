@@ -123,5 +123,74 @@ DNS server = same as interface IP
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/ae04841c-38f7-4392-87e3-07800323f29e)
 
 
+# Stage2 : Domain Setup
+
+## Step 1
+In GNS3 - drag in a server (Win2012r2) and connect to established LAN switch
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/88e8e934-fad1-451c-9134-71e73b8965ee)
+
+
+## Step 2: Set a static IP address
+- ip address: 10.128.0.10
+- subnet mask: 255.255.255.0
+- default gateway: 10.128.0.1
+- DNS primary: 127.0.0.1
+- DNS alternative: 10.128.0.1
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/caf5c972-d286-4450-8168-16236d75a466)
+
+## Step 3: Test LAN, WAN, and DNS network connectivity utilizing Ping.
+- LAN - 10.128.0.1 (Response)
+- WAN - 8.8.8.8 (Response)
+- DNS - google.com (Response)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f3e8f195-b793-4489-9992-582556a8d873)
+
+
+## Step 4: Configure NTP (Network Time Protocol)
+- Set timezone and sync with the LAN interface IP on the firewall utilize: 10.128.0.1 
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/42caba05-3a25-40cf-83cf-ae2bbba1e665)
+
+
+## Step 5: Change Hostname to dc (Domain Controller)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/a211bd22-0a06-4e4c-b691-e633f2317f9a)
+
+## Step 6: Install Active Directory
+- Initial startup to Server, set and establish password
+- Change computer name to dc (Local Server > Computer name hyperlink)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/2630c78c-c36f-45c8-bc6a-2ff73e7e19f8)
+
+
+- Validate connectivity by checking IP address, subnet mask, default gateway, & DNS primary utilizing ipconfig & IPv4 properties.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/ed7abdd0-02ea-46e0-a46d-fa060f067ff8)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/389bf3cb-5d87-43e0-acfd-44e9dfe0ae43)
+
+## Step 7: Install Directory Services role
+In Server Manager, Manage tab > Add Roles and Features
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/563cefbd-5d83-4f7c-a146-924bb6d4b24b)
+
+- Installation Type (Keep the defaults)
+- Server Selection (Keep the defaults)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/660a63ac-f606-452c-a19c-3d7a70d8ee7a)
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -177,9 +177,68 @@ In Server Manager, Manage tab > Add Roles and Features
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/563cefbd-5d83-4f7c-a146-924bb6d4b24b)
 
 - Installation Type (Keep the defaults)
-- Server Selection (Keep the defaults)
+- Server Selection (Keep the defaults) - select Server in server pool.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/660a63ac-f606-452c-a19c-3d7a70d8ee7a)
+
+
+- Server Roles - check mark Active Directory Domain Services.
+- Features (Keep the defaults)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/85c52b6d-4574-44ff-a0a7-2c00c3dc28bd)
+
+- Confirmation - click install (Active Directory binaries will be installed)
+- After installation, click the yellow flag for further configurations to create a domain controller.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6ecedb51-e29f-4ae9-bf8b-0c041625f508)
+
+- Click the "Promote this server to a domain controller" link.
+- Select: "Add a new forest" and then type the domain name that you want, then click Next.
+- The Active Directory Domain Services Configuration Wizard window will appear.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/344f792f-b053-4bde-83da-69386ae61fa0)
+
+### Domain Controller screen:
+- Select the Forest functional and Domain functional level (Keep defaults)
+- Set a password
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/c31f039a-3957-4fb3-b719-bbad129a0188)
+
+- DNS options (Keep defaults)
+- Additional options (Keep defaults)
+- Paths (Keep defaults)
+- Review options (Keep defaults)
+- Prerequisites Check: Review and Install
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f22e5eb2-2d5a-44b0-aead-49b95dc5ff9b)
+
+## Step 8: Create new Active Directory users
+Server Manager > Tools > Active Directory Users and Computers
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/3d637206-a1a9-449f-bdfe-daa2a4f2a7cf)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/64d83a96-162f-4130-97ba-87bfec4fdc17)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/40c72d6b-e243-48c8-b198-94ce37c01b62)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/2612d27a-aa0b-4e3c-8b3f-d8942c580354)
+
+
+- Add new admin to the admin group
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/02780a9b-3a99-42ab-a70e-ed6bdb78d646)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f13ac3ac-3a40-4d2e-b38d-7b1d8496452f)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/dcda4017-d551-4d5f-a8d8-d83b100cdad5)
+
+
+
+
+
+
+
+
 
 
 

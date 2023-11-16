@@ -278,10 +278,26 @@ Server Manager > Tools > Active Directory Users and Computers
 ## Step 1
 
 
+# Stage4 : LAMP Setup
+
+## Step 1
+- In GNS3, drag QUME VM Ubuntu in project and connected to established DMZ switch. 
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e9b40c2f-6c08-4790-90be-d68c4e89bd46)
+
+### Configure network settings
+- IP Address: 10.128.10.80
+- netmask: 255.255.255.0
+- gateway: 10.128.0.1
+- DNS: 10.128.0.10, 10.128.10.1
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/813d3a4f-6aa3-4ffd-865d-0dff5bad8491)
 
 
-
-
+## Step 2: Update Host file
+- Open Terminal, change to root [sudo -i] > enter password.
+- 
+- 
 
 
 

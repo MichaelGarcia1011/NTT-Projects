@@ -324,6 +324,42 @@ NOTE: *Upgrades will take a few hours.
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/20183d1e-71a7-4d67-8924-88113d99a065)
 
 
+# Stage5 : FTP Setup
+
+## Step 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

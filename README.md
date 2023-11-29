@@ -283,7 +283,7 @@ Server Manager > Tools > Active Directory Users and Computers
 ## Step 1
 - In GNS3, drag QUME VM Ubuntu in project and connect to established DMZ switch. 
 
-![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e9b40c2f-6c08-4790-90be-d68c4e89bd46)
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e9790003-8649-402b-b6fe-f13bdbbf508a)
 
 ### Configure network settings
 - IP Address: 10.128.10.80
@@ -327,18 +327,62 @@ NOTE: *Upgrades will take a few hours.
 # Stage5 : FTP Setup
 
 ## Step 1
+In GNS3, drag a server into project and rename to FTP host.
+- Static IP: 10.128.10.21
+- Subnet mask: 255.255.255.0
+- Default Gateway: 10.128.10.1
+- Set dc IP as primary DNS (10.128.0.10)
+- Firewall DMZ IP as secondary DNS (10.128.10.1)
+- Sync NTP with dc.widgets.localdomain
+- Change the hostname to ftp.
 
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/45766880-722a-4d77-9df1-d346cf399183)
 
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/623fd3eb-6beb-43ea-a8bb-b4298654536d)
 
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6aa9baa7-dfd8-41ff-985e-965b637c9718)
 
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/727008ce-bad2-4f6e-8aea-5145fb313d61)
 
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/123803c8-b61c-40c7-9f2d-00663c10eb1b)
 
 
+## Step 2: Install FTP Services
+In Server Manager, Manage tab > Add Roles and Features
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/563cefbd-5d83-4f7c-a146-924bb6d4b24b)
+
+- Installation Type (Keep the defaults)
+- Server Selection (Keep the defaults) - select Server in server pool.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/660a63ac-f606-452c-a19c-3d7a70d8ee7a)
+
+- Server Roles - check mark Active Directory Domain Services, DNS Server, and File & Storage Services.
+- Select the IIS Webserver (Add Feature).
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bafcd1db-3eb0-4aff-915e-8fa157acb38e)
+
+- Features (Keep defaults), NEXT.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/93a7dd24-768c-47b1-b901-e4d589e1b108)
+
+- Web Server Role (IIS), NEXT.
+- Role Services, check mark FTP Server, then FTP service and FTP Extensibility.
+- Keep all deafaults, NEXT. 
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/aebc661b-f541-4b47-8135-002805bae37e)
+
+- Confirmation, select NEXT, Warning message appears to restart after installation, YES.
+- Results, select CLOSE when installation is complete and server will restart.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f2b3c18b-1f73-4a84-9bc3-c7c1b7da0ec1)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/54ed3135-700e-4f32-9fb7-41937a46de60)
 
 
 

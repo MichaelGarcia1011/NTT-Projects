@@ -276,6 +276,71 @@ Server Manager > Tools > Active Directory Users and Computers
 # Stage3 : IIS Setup
 
 ## Step 1
+In GNS3 - drag in a server (Win2012r2) into project and connect to established LAN switch
+- Static IP: 10.128.0.80
+- Subnet mask: 255.255.255.0
+- Default Gateway: 10.128.0.1
+- Set dc IP as primary DNS (10.128.0.10)
+- Firewall DMZ IP as secondary DNS (10.128.0.1)
+- Sync NTP with dc.widgets.localdomain
+- When changed, join to the widgets domain
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/09ae8ff6-d64f-4bf0-8529-05202660bd19)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/d9377790-4fe2-42b6-a26d-82cb278fbb05)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/decdca86-2f2d-49cf-9006-040e18287d97)
+
+## Step 2: Add Roles and Features Wizard in Server Manager
+- On Installation Type page, select Role-based or feature-based installation to configure a single server. Click NEXT.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/58db9317-20a1-41ed-84f6-fca2ca5067bf)
+
+- On Server Selection page, select Select a server from the server pool, and then select a server. Click NEXT.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/b9673632-83e2-47a4-8d56-4d7a3f8303f4)
+
+- On the Server Roles page, select Web Server (IIS).
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/9703f479-fdea-4dff-8913-1597d413832b)
+
+- In the Add Roles and Features page, click Add Features to install the IIS Management Console. Check mark Include Management tools.
+- Then click NEXT on the Server Roles page.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6f532fd5-51ce-4d67-8b4c-3fa3bffb494a)
+
+- On Features page, keep defaults. Select additional features if needed then click NEXT.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/be447250-bb03-48c6-b6c5-0f59b185f80b)
+
+- On Web Server Role (IIS) page, click NEXT.
+- On Role Services page, keep defaults. Select additional features if needed then click NEXT.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/1c07be42-cf84-4ca2-9c74-ef795d72a320)
+
+- On Confirmation page, click INSTALL.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/409cc6ce-7ab7-46bf-b20d-b6b18603369d)
+
+- After installation is successful, a Results page will appear.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/2f6abf05-988f-4ad7-a57b-ff247ec7d3b6)
+
+## Step 3: Confirm that the Web server works by opening a Web browser. 
+- Enter [http://localhost] address.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/c2a3b64b-1ddd-42be-a3d4-1aa7ab7bd8a1)
+
+## Step 4: Trust the Website.
+- On Web Browser, click the gear symbol (upper right-hand corner), select Internet Options.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/552d3250-ab08-45ac-9dea-2adfff497ca2)
+
+- On Internet Options window, select the security tab > Trusted sites > Sites
+- On Trusted Sites window, [http://localhost] should be in the "Add this website to the zone:" box, then click ADD, then OK. 
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/9393a57b-f690-4856-8394-b920487a2331)
+
 
 
 # Stage4 : LAMP Setup
@@ -353,7 +418,7 @@ In GNS3, drag a server into project and rename to FTP host.
 
 
 ## Step 2: Install FTP Services
-In Server Manager, Manage tab > Add Roles and Features
+### In Server Manager, Manage tab > Add Roles and Features
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/563cefbd-5d83-4f7c-a146-924bb6d4b24b)
 
@@ -383,6 +448,34 @@ In Server Manager, Manage tab > Add Roles and Features
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f2b3c18b-1f73-4a84-9bc3-c7c1b7da0ec1)
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/54ed3135-700e-4f32-9fb7-41937a46de60)
+
+### After Installation of FTP Services
+In the FTP Server, Service Manager > Tools > Internet Information Services (IIS) Manager > SRV-8 Home (left column). 
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/159605c3-f1e4-40b2-bbe2-ec013d15acd4)
+
+- Create a FTP folder in the local disk (C:), 
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/986fb763-a77f-4485-94bc-90548555b893)
+
+- Add a FTP site.
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/62438686-8b77-4c0c-89e7-2db5ff7e4701)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/b46cb4f7-e1f6-4fef-8891-f28212ed47ef)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/b823cd4d-1d11-4ae5-bb69-f83847341c54)
+
+
+- Add the Users/Groups, given read and/or write permissions. 
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/555d0e30-6546-4dc0-af7e-3287c7ce4cba)
+
+
+- After adding Users/Groups, Open Browser and test the website at: ftp://ftp.widgets.localdomain/
+- A window message box will appear requiring username and password. Enter the website should appear as below.
+  
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/a85ee165-64a8-45c2-bccd-a7089f1b3de4)
 
 
 

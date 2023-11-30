@@ -311,6 +311,7 @@ Server Manager > Tools > Active Directory Users and Computers
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/3f3e32f3-229f-4f5e-8227-9fb69e9aebd3)
 
+
 - Logout of win10, and then log back in: Background should be updated.
 - You can use gpupdate and gpresult to troubleshoot GPO issues.
 
@@ -413,12 +414,13 @@ Create the HTML file
 - Then test from the Win10 Workstation: http://iis.widgets.localdomain/test.html
 
 
-# Stage4 : LAMP Setup
+# STAGE 4 : LAMP Setup
 
 ## Step 1: Prepare the Ubuntu Server
 - In GNS3, drag QUME VM Ubuntu in project and connect to established DMZ switch. 
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e9790003-8649-402b-b6fe-f13bdbbf508a)
+
 
 ### Configure network settings
 - IP Address: 10.128.10.80
@@ -446,6 +448,7 @@ Create the HTML file
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/37bef485-c45f-4024-a1ff-167594934773)
 
+
 ## Step 3: Update packages on the Server
 - [apt update -y]
 - [apt upgrade -y]
@@ -459,10 +462,10 @@ NOTE: *Upgrades will take a few hours.
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/20183d1e-71a7-4d67-8924-88113d99a065)
 
 
-# Stage5 : FTP Setup
+# STAGE 5 : FTP Setup
 
-## Step 1
-In GNS3, drag a server into project and rename to FTP host.
+## Step 1: Prepare a Win2012r2 server
+In GNS3 - Drag a server into project and rename to FTP host.
 - Static IP: 10.128.10.21
 - Subnet mask: 255.255.255.0
 - Default Gateway: 10.128.10.1
@@ -488,29 +491,35 @@ In GNS3, drag a server into project and rename to FTP host.
 
 
 ## Step 2: Install FTP Services
+
 ### In Server Manager, Manage tab > Add Roles and Features
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/563cefbd-5d83-4f7c-a146-924bb6d4b24b)
+
 
 - Installation Type (Keep the defaults)
 - Server Selection (Keep the defaults) - select Server in server pool.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/660a63ac-f606-452c-a19c-3d7a70d8ee7a)
 
+
 - Server Roles - check mark Active Directory Domain Services, DNS Server, and File & Storage Services.
 - Select the IIS Webserver (Add Feature).
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bafcd1db-3eb0-4aff-915e-8fa157acb38e)
 
+
 - Features (Keep defaults), NEXT.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/93a7dd24-768c-47b1-b901-e4d589e1b108)
+
 
 - Web Server Role (IIS), NEXT.
 - Role Services, check mark FTP Server, then FTP service and FTP Extensibility.
 - Keep all deafaults, NEXT. 
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/aebc661b-f541-4b47-8135-002805bae37e)
+
 
 - Confirmation, select NEXT, Warning message appears to restart after installation, YES.
 - Results, select CLOSE when installation is complete and server will restart.
@@ -519,10 +528,12 @@ In GNS3, drag a server into project and rename to FTP host.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/54ed3135-700e-4f32-9fb7-41937a46de60)
 
+
 ### After Installation of FTP Services
 In the FTP Server, Service Manager > Tools > Internet Information Services (IIS) Manager > SRV-8 Home (left column). 
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/159605c3-f1e4-40b2-bbe2-ec013d15acd4)
+
 
 - Create a FTP folder in the local disk (C:), 
 

@@ -58,7 +58,7 @@ Verify the configuration: [show sys dhcp server 1]
 - Gateway: 10.128.0.1
 - DHCP Server: 10.128.0.1
 
-![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/3c85f462-3776-487e-b508-b188d764afb5)
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/37a443d4-592a-4518-9180-07dd1fcdf1eb)
 
 
 ### Test Internet Connection on Win10 Workstation
@@ -66,6 +66,9 @@ Ping:
 - LAN - 10.128.0.1 (Responsed)
 - WAN - 8.8.8.8 (Request timed out. Connection to be establish)
 - DNS - google.com (Request could not find host. Connection to be establish)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/df954cec-74a9-4fa1-a390-bbb9afa368ea)
+
 
 ## Step 4: Connect to FortiGate Firewall GUI
 From Win10 Workstation, Open Web Browser and enter http://10.128.0.1/
@@ -162,6 +165,7 @@ In GNS3 - drag in a server (Win2012r2) and connect to established LAN switch
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/caf5c972-d286-4450-8168-16236d75a466)
 
+
 ## Step 3: Test LAN, WAN, and DNS network connectivity utilizing Ping.
 - LAN - 10.128.0.1 (Response)
 - WAN - 8.8.8.8 (Response)
@@ -180,6 +184,7 @@ In GNS3 - drag in a server (Win2012r2) and connect to established LAN switch
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/a211bd22-0a06-4e4c-b691-e633f2317f9a)
 
+
 ## Step 6: Install Active Directory
 - Initial startup to Server, set and establish password
 - Change computer name to dc (Local Server > Computer name hyperlink)
@@ -193,10 +198,12 @@ In GNS3 - drag in a server (Win2012r2) and connect to established LAN switch
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/389bf3cb-5d87-43e0-acfd-44e9dfe0ae43)
 
+
 ## Step 7: Install Directory Services role
 In Server Manager, Manage tab > Add Roles and Features
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/563cefbd-5d83-4f7c-a146-924bb6d4b24b)
+
 
 - Installation Type (Keep the defaults)
 - Server Selection (Keep the defaults) - select Server in server pool.
@@ -209,10 +216,12 @@ In Server Manager, Manage tab > Add Roles and Features
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/85c52b6d-4574-44ff-a0a7-2c00c3dc28bd)
 
+
 - Confirmation - click install (Active Directory binaries will be installed)
 - After installation, click the yellow flag for further configurations to create a domain controller.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6ecedb51-e29f-4ae9-bf8b-0c041625f508)
+
 
 - Click the "Promote this server to a domain controller" link.
 - Select: "Add a new forest" and then type the domain name that you want, then click Next.
@@ -220,11 +229,13 @@ In Server Manager, Manage tab > Add Roles and Features
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/344f792f-b053-4bde-83da-69386ae61fa0)
 
+
 ### Domain Controller screen:
 - Select the Forest functional and Domain functional level (Keep defaults)
 - Set a password
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/c31f039a-3957-4fb3-b719-bbad129a0188)
+
 
 - DNS options (Keep defaults)
 - Additional options (Keep defaults)
@@ -233,6 +244,7 @@ In Server Manager, Manage tab > Add Roles and Features
 - Prerequisites Check: Review and Install
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f22e5eb2-2d5a-44b0-aead-49b95dc5ff9b)
+
 
 ## Step 8: Create new Active Directory users
 Server Manager > Tools > Active Directory Users and Computers
@@ -260,9 +272,19 @@ Server Manager > Tools > Active Directory Users and Computers
 - Change the primary DNS server to the IP for the DC.
 - Set NTP to sync with dc.widgets.localdomain
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/8cd89771-87fc-4291-a464-9da2e42d49e3)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/faa67ff1-24b1-407a-b1e8-4b66690c78d8)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6c367464-4abf-4da2-9a93-afcda1744447)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/69758ea0-7d74-4d01-ae47-d776ca1215ba)
 
 
 ## Step 10: Join Win10 to the widgets.localdomain domain
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/4e2a342d-598e-4ce0-9ba2-1ef91f38f20a)
+
 
 ### Join a Computer to a Domain (Microsoft Directions)
 - On the Desktop, click the Start button, type Control Panel, and then press ENTER.
@@ -295,9 +317,9 @@ Server Manager > Tools > Active Directory Users and Computers
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/9c6e3f6e-68d5-4e20-85d5-1f6ab13c207c)
 
 
-# Stage3 : IIS Setup
+# STAGE 3: IIS Setup
 
-## Step 1
+## Step 1: Prepare a Win2012r2 server
 In GNS3 - drag in a server (Win2012r2) into project and connect to established LAN switch
 - Static IP: 10.128.0.80
 - Subnet mask: 255.255.255.0
@@ -313,50 +335,61 @@ In GNS3 - drag in a server (Win2012r2) into project and connect to established L
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/decdca86-2f2d-49cf-9006-040e18287d97)
 
-## Step 2: Add Roles and Features Wizard in Server Manager
+
+## Step 2: Install the IIS Role - Add Roles and Features Wizard in Server Manager
 - On Installation Type page, select Role-based or feature-based installation to configure a single server. Click NEXT.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/58db9317-20a1-41ed-84f6-fca2ca5067bf)
+
 
 - On Server Selection page, select Select a server from the server pool, and then select a server. Click NEXT.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/b9673632-83e2-47a4-8d56-4d7a3f8303f4)
 
+
 - On the Server Roles page, select Web Server (IIS).
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/9703f479-fdea-4dff-8913-1597d413832b)
+
 
 - In the Add Roles and Features page, click Add Features to install the IIS Management Console. Check mark Include Management tools.
 - Then click NEXT on the Server Roles page.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6f532fd5-51ce-4d67-8b4c-3fa3bffb494a)
 
+
 - On Features page, keep defaults. Select additional features if needed then click NEXT.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/be447250-bb03-48c6-b6c5-0f59b185f80b)
+
 
 - On Web Server Role (IIS) page, click NEXT.
 - On Role Services page, keep defaults. Select additional features if needed then click NEXT.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/1c07be42-cf84-4ca2-9c74-ef795d72a320)
 
+
 - On Confirmation page, click INSTALL.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/409cc6ce-7ab7-46bf-b20d-b6b18603369d)
+
 
 - After installation is successful, a Results page will appear.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/2f6abf05-988f-4ad7-a57b-ff247ec7d3b6)
 
+
 ## Step 3: Confirm that the Web server works by opening a Web browser. 
-- Enter [http://localhost] address.
+- Enter http://localhost in the web browser.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/c2a3b64b-1ddd-42be-a3d4-1aa7ab7bd8a1)
+
 
 ## Step 4: Trust the Website.
 - On Web Browser, click the gear symbol (upper right-hand corner), select Internet Options.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/552d3250-ab08-45ac-9dea-2adfff497ca2)
+
 
 - On Internet Options window, select the security tab > Trusted sites > Sites
 - On Trusted Sites window, [http://localhost] should be in the "Add this website to the zone:" box, then click ADD, then OK. 
@@ -364,10 +397,25 @@ In GNS3 - drag in a server (Win2012r2) into project and connect to established L
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/9393a57b-f690-4856-8394-b920487a2331)
 
 
+## Step 5: Setup a test webpage on IIS
+Create the HTML file
+- Open notepad and add the following:
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6fa2bf01-f216-4a84-a5d8-d507461edeaa)
+
+
+- Save the file to your documents folder as: test.html
+- Copy the file from your documents folder to: c:\inetpub\wwwroot\test.html
+- Test in local browser on IIS: http://localhost/test.html
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/570cb217-0671-4264-add2-0d0024786818)
+
+- Then test from the Win10 Workstation: http://iis.widgets.localdomain/test.html
+
 
 # Stage4 : LAMP Setup
 
-## Step 1
+## Step 1: Prepare the Ubuntu Server
 - In GNS3, drag QUME VM Ubuntu in project and connect to established DMZ switch. 
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/e9790003-8649-402b-b6fe-f13bdbbf508a)

@@ -7,12 +7,13 @@ In GNS3 - Drag and connect all devices to the established WAN Cloud & WAN Switch
 - FortiGate (Firewall)
 - LAN Switch
 - DMZ Switch
-- Win10 workstation
+- Win10 Workstation
   
-![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/43e14d94-3eec-4197-9855-34a1a2b76fc4)
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/caad0d8f-c242-487a-b55f-9378f15e5568)
 
 
-## Step 2: In FortiGate PuTTY - Configure the FortiGate Firewall
+## Step 2: Configure the LAN Network.
+In FortiGate PuTTY - Configure the FortiGate Firewall
 - Create Password
   
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bb0e8f11-500d-454f-8a82-3eafd1c0a6b1)
@@ -47,44 +48,56 @@ Verify the configuration: [show sys dhcp server 1]
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/8731ccb7-f000-40e6-b1ff-5f3bcbf00759)
 
 
-## Step 3: Test Internet Connection on Win10 Workstation
+## Step 3: Add a Win10 Workstation
+- Start the Win10 workstation in GNS3, and then double click it to connect through VNC.
+- The first time you start Win10 it will take a minute or two to setup.
+- Click-and-hold the background image and drag up to show the login prompt.
+
+### Verify the Win10 workstation has leased a DHCP address from the LAN network.
+- Valid IP Range: 10.128.0.(100-199)/24
+- Gateway: 10.128.0.1
+- DHCP Server: 10.128.0.1
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/3c85f462-3776-487e-b508-b188d764afb5)
+
+
+### Test Internet Connection on Win10 Workstation
 Ping:
 - LAN - 10.128.0.1 (Responsed)
 - WAN - 8.8.8.8 (Request timed out. Connection to be establish)
 - DNS - google.com (Request could not find host. Connection to be establish)
 
-
-## Step 4
-Connect to FortiGate Firewall (utilize GUI) from Win10 Workstation.
-Web Browser: http://10.128.0.1/
+## Step 4: Connect to FortiGate Firewall GUI
+From Win10 Workstation, Open Web Browser and enter http://10.128.0.1/
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/26bb851d-1f42-432d-9011-97dd89f69d4d)
 
 
-
-System adjustments:  
+### System adjustments:  
+System > Settings
 - Hostname & Timezone
+- Enable Local NTP Server
+- List on Interface: port2 & port4
 - Set idle to 60 mins
 - Enable auto file system check
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6f4ae0c0-9ace-430a-86f4-6acd60964bd9)
 
-System > Settings
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/82aebba5-4a2f-47b8-a378-322d82fe8ab8)
 
-![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/b97d56db-2160-4c53-9347-8e9545df7923)
+### Backup all Configurations
+- Click Admin (Upper Right-hand Corner) > Configuration > Backup
+- Save backup in download folder on Win10 Workstation
+- Reboot Firewall
 
-Backup all Configurations
-- [admin > configuration > backup]
-- Save backup
-- Save in download folder on Win10 Workstation
+## Step 5: Complete the Network Setup
+Open the Web Browser on the Win10 Workstation and connect to the firewall GUI (FortiGate Firewall) - http://10.128.0.1/ 
 
-
-## Step 5
-### In Web Browser (FortiGate Firewall) - Configure Network Interface
+### Configure Network Interface
 - 10.128.0.0/24 as the LAN network
 - 10.128.99.0/24 as the GUEST network
 - 10.128.10.0/24 as the DMZ network
-- [Network > Interface]
+- Network > Interface
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/6bf2833a-a05d-4034-858b-4b655a4011dc)
 
@@ -108,14 +121,14 @@ Note: This tells the firewall to use this DNS servers for it's own DNS requests.
 
 ### Configure Network DNS
 DNS server = same as interface IP
-- [Network > DNS Servers]
+- Network > DNS Servers
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/8baf32a9-1aed-4423-bb46-0854059829bb)
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bd968b02-6ea4-4c01-9876-af10646e6223)
 
 ### Configure Service Objects
-- [Policy & Objects > Services]
+- Policy & Objects > Services
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/44401d53-6700-4c00-bb90-890c0ae7fda4)
 
@@ -132,18 +145,18 @@ DNS server = same as interface IP
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/ae04841c-38f7-4392-87e3-07800323f29e)
 
 
-# Stage2 : Domain Setup
+# STAGE 2 : DOMAIN SETUP
 
-## Step 1
+## Step 1: Prepare a Win2012r2 Server
 In GNS3 - drag in a server (Win2012r2) and connect to established LAN switch
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/88e8e934-fad1-451c-9134-71e73b8965ee)
 
 
 ## Step 2: Set a static IP address
-- ip address: 10.128.0.10
-- subnet mask: 255.255.255.0
-- default gateway: 10.128.0.1
+- IP Address: 10.128.0.10
+- Subnet Mask: 255.255.255.0
+- Default Gateway: 10.128.0.1
 - DNS primary: 127.0.0.1
 - DNS alternative: 10.128.0.1
 

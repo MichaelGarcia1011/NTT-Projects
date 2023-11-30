@@ -1,11 +1,9 @@
-# NTT-Projects
+# Project: Creating a Small Business Network
 
-Creating a small business network
+## STAGE 1 : NETWORK SETUP
 
-## Stage1 : Network Setup
-
-## Step 1
-In GNS3 - drag all network equipment into the project and connect all the devices
+## Step 1: Drag Network Equipment into the Project.
+In GNS3 - Drag and connect all devices to the established WAN Cloud & WAN Switch.
 - FortiGate (Firewall)
 - LAN Switch
 - DMZ Switch
@@ -14,11 +12,11 @@ In GNS3 - drag all network equipment into the project and connect all the device
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/43e14d94-3eec-4197-9855-34a1a2b76fc4)
 
 
-## Step 2
-In FortiGate PuTTY - Configure the FortiGate Firewall
+## Step 2: In FortiGate PuTTY - Configure the FortiGate Firewall
 - Create Password
   
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/bb0e8f11-500d-454f-8a82-3eafd1c0a6b1)
+
 
 ### Configure Firewall (LAN gateway & interface)
 -   LAN gateway is 10.128.0.1/24
@@ -26,19 +24,30 @@ In FortiGate PuTTY - Configure the FortiGate Firewall
   
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/71ab3e15-41eb-450d-b702-12b4b05fe47c)
 
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/1de5da18-23ab-4fcc-b019-a63840edf96c)
+
+
+Verify the configuration: [show sys int port2]
+
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/4dfebb58-d9a4-4a05-8c0a-d61323892a1c)
 
 
 ### Configure DHCP server for LAN Interface
-- DHCP set pool scope to 10.128.0.[100-199]. Boundary set as per project parameters.
+- Enable the DHCP sever on the LAN interface.
+- The firewall will perform DHCP services for devices on the LAN network.
+- Set the DHCP pool scope to 10.128.0.(100-199). Boundary set as per project parameters.
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/f395aba3-358c-4384-bdf6-07cf3069945f)
+
+![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/fc5e4f2d-5ec4-41b3-815b-a0360459bcaa)
+
+
+Verify the configuration: [show sys dhcp server 1]
 
 ![image](https://github.com/MichaelGarcia1011/NTT-Projects/assets/150825876/8731ccb7-f000-40e6-b1ff-5f3bcbf00759)
 
 
-## Step 3 
-### Test Internet Connection on Win10 Workstation
+## Step 3: Test Internet Connection on Win10 Workstation
 Ping:
 - LAN - 10.128.0.1 (Responsed)
 - WAN - 8.8.8.8 (Request timed out. Connection to be establish)
